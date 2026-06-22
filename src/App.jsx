@@ -3,14 +3,34 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "./assets/vite.svg";
 import heroImg from "./assets/hero.png";
 import "./App.css";
-import HelloWorld from "./components/HelloWorld";
 
-import Greeting from "./components/Greeting";
+import Card from "./components/Card";
 
 function App() {
   return (
-    <div>
-      <Greeting name="Janson"></Greeting>
+    <div
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "center",
+        padding: "40px",
+        backgroundColor: "#f0f0f0",
+        minHeight: "100vh",
+      }}
+    >
+      {/* 第一张卡片关于 React */}
+      <Card
+        title="React是什么?"
+        content="React 是一个用于构建用户界面的 JavaScript 库，由 Facebook 开发。它采用组件化方式，让代码更易复用和维护。"
+        imageUrl="https://react.dev/images/uwu.png"
+      />
+
+      {/* 第二个卡片是关于Vite */}
+      <Card
+        title="Vite的优势"
+        content="Vite是新一代前端构建工具，开发服务器启动极快，支持热模块替换（HMR），是现代 React 项目的首选。"
+        imageUrl="https://vite.dev/logo-without-border.svg"
+      />
     </div>
   );
 
