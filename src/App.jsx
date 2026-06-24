@@ -28,7 +28,7 @@ function App() {
       {/* 第二个卡片是关于Vite */}
       <Card
         title="Vite的优势"
-        content="Vite是新一代前端构建工具，开发服务器启动极快，支持热模块替换（HMR），是现代 React 项目的首选。"
+        content="Vite是新一代前端构建工具,开发服务器启动极快,支持热模块替换(HMR),是现代 React 项目的首选。"
         imageUrl="https://vite.dev/logo-without-border.svg"
       />
     </div>
