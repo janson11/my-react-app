@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>菜鸟教程 React 实例</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      class FlavorForm extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = { value: "cocount" };
+
+          this.handleChange = this.handleChange.bind(this);
+          this.handleSubmit = this.handleSubmit.bind(this);
+        }
+
+        handleChange(event) {
+          this.setState({ value: event.target.value });
+        }
+
+        handleSubmit(event) {
+          alert("Your favorite falvor is: " + this.state.value);
+          event.preventDefault();
+        }
+
+        render() {
+          return (
+            <form onSubmit={this.handleSubmit}>
+              <label>
+                选择您最喜欢的网站
+                <select value={this.state.value} onChange={this.handleChange}>
+                  <option value="gg">Google</option>
+                  <option value="rn">Runoob</option>
+                  <option value="tb">Taobao</option>
+                  <option value="fb">FaceBook</option>
+                </select>
+              </label>
+              <input type="submit" value="提交" />
+            </form>
+          );
+        }
+      }
+
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(<FlavorForm />);
+    </script>
+  </body>
+</html>
